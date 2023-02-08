@@ -25,20 +25,23 @@ python run.py <monthly/hourly> ten/up/ali/vult/digit/soft/100
 - It will only print the json results retrived by the script without pushing to Elastic
 
 ## Features
-Retrieves billing data from the following cloud providers:
-- Softlayer
-- Tencent
-- Upcloud
-- Vultr
-- DigitalOcean
-- Tb100
-- Aliyun
+- Retrieves billing data from the following cloud providers:
+<p> -Softlayer</p>
+<p> -Tencent</p>
+<p> -Upcloud</p>
+<p> -Vultr</p>
+<p> -DigitalOcean</p>
+<p> -Tb100</p>
+<p> -Aliyun</p>
 
 - Indexes the billing data in Elasticsearch
 - Allows for testing the monthly and hourly scripts
 - Retrieves all previous invoices from January 2021 Configuration
 
 The credentials for each provider are stored in a credentials.json file.
+<br />
+
+Please add your credentials as the files suggests, the department and enviroment arguments are for deeper personalization monitoring
 
 ## Output
 The script outputs the billing data for each provider in the form of a JSON object. The data is indexed in Elasticsearch in the hourly_index and monthly_index indices.
