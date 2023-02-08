@@ -21,7 +21,7 @@ class Tb100RQ:
 
     def monthly(self):
         env_lst = []
-        for cred in config["tb100_cred"]:
+        for cred in config["tb100_cred"][0]:
             try:
                 billing_response = requests.get(self.url,
                                                 headers={'Accept': 'application/json',

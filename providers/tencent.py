@@ -24,7 +24,7 @@ class TencentRQ:
 
     def hourly(self):
         env_lst = []
-        for cred in config["tencent_cred"]:
+        for cred in config["tencent_cred"][0]:
             creds = credential.Credential(cred["user"], cred["token"])
             client = billing_client.BillingClient(creds, "", clientProfile)
             params = {
@@ -44,7 +44,7 @@ class TencentRQ:
 
     def monthly(self):
         env_lst = []
-        for cred in config["tencent_cred"]:
+        for cred in config["tencent_cred"][0]:
             creds = credential.Credential(cred["user"], cred["token"])
             client = billing_client.BillingClient(creds, "", clientProfile)
             params = {

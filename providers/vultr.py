@@ -20,7 +20,7 @@ class VultrRQ:
     def fetch_data(self, url, call):
         logger = functions.setup_logger(logger_name=self.name)
         env_lst = []
-        for cred in config["vultr_cred"]:
+        for cred in config["vultr_cred"][0]:
             self.headers["Authorization"] = "Bearer {}".format(cred["key"])
             try:
                 response = requests.get(url, headers=self.headers).json()

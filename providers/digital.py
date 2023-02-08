@@ -16,7 +16,7 @@ class DigitalRQ:
     def fetch_data(self, url, call):
         logger = functions.setup_logger(logger_name=self.name)
         env_lst = []
-        for cred in config["digital_cred"]:
+        for cred in config["digital_cred"][0]:
             headers = {"Authorization": "Bearer {}".format(cred["encoded"]),
                        "Content-Type": "application/json"}
             try:

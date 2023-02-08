@@ -21,7 +21,7 @@ class UpcloudRQ:
 
     def hourly(self):
         env_lst = []
-        for cred in config["upcloud_cred"]:
+        for cred in config["upcloud_cred"][0]:
             headers = {"Authorization": "Basic {}".format(cred["encoded"]),
                        "Content-Type": "application/json"}
             try:
@@ -38,7 +38,7 @@ class UpcloudRQ:
 
     def monthly(self):
         env_lst = []
-        for cred in config["upcloud_cred"]:
+        for cred in config["upcloud_cred"][0]:
             headers = {"Authorization": "Basic {}".format(cred["encoded"]),
                        "Content-Type": "application/json"}
             try:

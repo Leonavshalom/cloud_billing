@@ -14,7 +14,7 @@ class SoftlayerRQ:
 
     def hourly(self):
         env_lst = []
-        for cred in data["softlayer_cred"]:
+        for cred in data["softlayer_cred"][0]:
             try:
                 client = SoftLayer.create_client_from_env(username=cred["user"], api_key=cred["token"])
                 output = functions.to_dict(provider=self.name, department=cred["department"], enviroment=cred["env"],
@@ -39,7 +39,7 @@ class SoftlayerRQ:
                                                        {'name': 'data', 'value': ['RECURRING']}
                                                    ]
                                                }, }}}
-        for cred in data["softlayer_cred"]:
+        for cred in data["softlayer_cred"][0]:
             client = SoftLayer.create_client_from_env(username=cred["user"], api_key=cred["token"])
             try:
                 for invoice in client.iter_call("SoftLayer_Account", "getInvoices", filter=orderBy, mask=objectMask):

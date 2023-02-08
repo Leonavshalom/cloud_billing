@@ -21,7 +21,7 @@ class AliyunRQ:
     def hourly(self):
         env_lst = []
         total_sum = 0
-        for cred in config["aliyun_cred"]:
+        for cred in config["aliyun_cred"][0]:
             client = AcsClient(cred["user"], cred["token"], "ap-southeast-1")
             request = QueryBillOverviewRequest()
             request.add_query_param('BillingCycle', datetime.now(timezone.utc).strftime("%Y-%m"))
@@ -52,7 +52,7 @@ class AliyunRQ:
         storage_sum = 0
         marketplace_sum = 0
 
-        for cred in config["aliyun_cred"]:
+        for cred in config["aliyun_cred"][0]:
             client = AcsClient(cred["user"], cred["token"], "ap-southeast-1")
             request = QueryBillOverviewRequest()
             request.add_query_param('BillingCycle', functions.last_month.strftime("%Y-%m"))
