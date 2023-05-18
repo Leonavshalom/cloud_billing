@@ -1,4 +1,4 @@
-# Billing Provider Data Script
+# Billing Cloud Provider Data Script
 A script that retrieves billing data from various cloud providers and indexes it in Elasticsearch.
 
 ## Requirements
